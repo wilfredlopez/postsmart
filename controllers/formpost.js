@@ -9,7 +9,7 @@ module.exports = (req,res)=>{
     
 
     try{
-        const {image} = req.files
+        let {image} = req.files
     image.mv(path.resolve(__dirname,'../public/postimages',tiempo+image.name),(err)=>{
         
         

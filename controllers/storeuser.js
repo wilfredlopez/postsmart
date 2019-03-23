@@ -8,11 +8,11 @@ let tiempo = moment(new Date()).format('x')
 
 module.exports = (req,res)=>{
     
-
+    let image = {name:'default.png'}
 
     try{
         let {image} = req.files
-        image.mv(path.resolve(__dirname,'../public/userimages',image.name),(err)=>{
+        image.mv(path.resolve(__dirname,'../public/userimages',tiempo+image.name),(err)=>{
         
         })
     }catch(error){
@@ -23,7 +23,7 @@ module.exports = (req,res)=>{
 
         User.create({
             ...req.body,
-            userimage: `/userimages/${image.name}`
+            userimage: `/userimages/${tiempo+image.name}`
             
             },(error,post)=>{
             if(error){

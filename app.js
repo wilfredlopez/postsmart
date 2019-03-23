@@ -83,7 +83,9 @@ app.post('/post/new',formpostcontrol)
 app.post('/user/login',loginusercontrol)
 app.get('/users/:username',useraccountcontrol)
 app.get('/about',(req,res)=>{
-    res.render('about.hbs')
+    res.render('about.hbs',{
+        pageTitle:'About'
+    })
 })
 //404 PAGE
 app.use((req,res)=>{res.render('notfound.hbs')})

@@ -34,7 +34,8 @@ module.exports = async function(req, res){
         username,
         userimage,
         user,
-        about
+        about,
+        pageTitle:`User: ${username}`
     })
 
 }

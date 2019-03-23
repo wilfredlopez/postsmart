@@ -2,7 +2,7 @@ module.exports = (req,res) =>{
 
     
     res.render('login.hbs',{
-        pageTitle: "Create Post",
+        pageTitle: "Login",
         error: req.flash('registrationErrors')
     })
 }
