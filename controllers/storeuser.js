@@ -42,7 +42,7 @@ module.exports = (req,res)=>{
     
             })    
 
-        
+        return
         })
     }catch(error){
             console.log('error uploading image')
