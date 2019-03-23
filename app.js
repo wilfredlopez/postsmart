@@ -11,6 +11,7 @@ const connectMongo = require('connect-mongo') //to store user session in mongodb
 const auth = require('./middleware/auth') //created by me to only allow authenticated users to access certain pages 
 const connectFlash = require('connect-flash') //adds a flash function to the request object
 const User = require('./database/models/user')
+const cloudinary = require('cloudinary')
 
 
 //CONTROLLERS
@@ -38,6 +39,11 @@ mongoose.set('useCreateIndex', true);
 //express and middleware
 const app = express()
 const mongoStore = connectMongo(expressSession)
+cloudinary.config({
+    api_key: process.env.WILFRED_API_KEY,
+    api_secret: process.env.WILFRED_API_SECRET,
+    cloud_name:process.env.WILFRED_CLOUD_NAME
+})
 app.use(connectFlash()) //ANABLES A flash function on the request object. using it to display error messages as a one time thing
 app.use(bodyParser.json()) //to be able to accept json data from client
 app.use(bodyParser.urlencoded({ extended:true }))
