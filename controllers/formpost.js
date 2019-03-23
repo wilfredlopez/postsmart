@@ -6,9 +6,10 @@ const moment = require('moment')
 let tiempo = moment(new Date()).format('x')
 
 module.exports = (req,res)=>{
-    const {image} = req.files
+    
 
     try{
+        const {image} = req.files
     image.mv(path.resolve(__dirname,'../public/postimages',tiempo+image.name),(err)=>{
         
         
