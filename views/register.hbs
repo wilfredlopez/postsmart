@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head }}
+
+<body id="page-top">
+
+{{> nav }}
+
+{{> postContent }}
+
+
+<div class="container">
+  <div class="text-center">
+  <h1>Create New Account</h1>
+</div>
+<form class="jumbotron" action="/user/register" method="POST" enctype="multipart/form-data">
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label for="username">User Name</label>
+        <input type="text" name="username" placeholder="username" class="form-control" required value="{{data.username}}" aria-describedby="requiredmsg"></input>
+        <span class="SR-Only" id="requiredmsg">The Username is required</span>
+      </div>
+  </div><!--control group username -->
+
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email" class="form-control" value="{{data.email}}"></input>
+      </div>
+  </div><!--control group Email -->
+
+  <div class="control-group">
+      <div  class="form-group floating-label-form-group controls">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="password" class="form-control" value="{{data.password}}"></input>
+      </div>
+  </div><!--control group Password -->
+
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label for="image">Profile Picture</label>
+        <input type="file" name="image" class="form-control-file">
+        </div>
+  </div><!--control group content-->
+
+    <div class="control-group">
+      <div  class="form-group floating-label-form-group controls">
+        <label for="about">About You:</label>
+        <input type="text" name="about" placeholder="about..." class="form-control" value="{{data.about}}"></input>
+      </div>
+  </div><!--control group Password -->
+
+  <div class="control-group text-center">
+      <div class="form-group floating-label-form-group controls">
+        <button class="btn btn-primary">Register Now</button>
+      </div>
+  </div><!--control group Button -->
+    <div class="container" id="errors">
+         {{#each error}}
+      <p class="alert alert-danger" role="alert">{{this}}</p>
+        {{/each}}
+  </div>
+</form>
+
+
+
+</div><!-- Container -->
+
+  {{> footer }}
+
+
+{{>scripts}}
+
+</body>
+
+</html>

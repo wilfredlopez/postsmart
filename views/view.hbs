@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head }}
+
+<body id="page-top">
+
+{{> nav }}
+
+{{> postContent }}
+
+<div class="container">
+    <a href="/"><button class="btn btn-primary text-left mb-4">See all Posts</button></a>
+</div>
+<div class="container">
+    <!--Post loop-->
+    <div class="jumbotron">
+        <h1 class="display-4">{{post.title}}</h1>
+        <p class="lead">
+                {{post.description}}
+        </p>
+        <hr class="my-4">
+        <p>
+           {{{post.content}}}
+  
+        </p>
+
+        <div class="alert alert-light" role="alert">
+            Created by  <a href="/users/{{ user.username }}" class="alert-link">{{user.username}}</a>.  {{post.createdAt}}. Give it a click if you like.
+          </div>
+
+      </div><!-- JUMBOTRON  end of loop-->
+</div><!-- Container -->
+
+  {{> footer }}
+
+
+{{>scripts}}
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head }}
+
+<body>
+
+{{> nav }}
+<hr>
+<div class="container mt-5 pt-sm-5">
+    <a href="/"><button class="btn btn-primary text-left mb-4">See all Posts</button></a>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <figure class="figure">
+            <img src={{userimage}} class="figure-img img-fluid rounded profile-image" alt="A generic square placeholder image with rounded corners in a figure.">
+            </figure>
+        </div>
+        <div class="col-xs-12 col-sm-4 offet-sm-1">
+            <p>Username: <span>{{username}}</span></p>
+            <p>About: <span>{{about}}</span></p>
+        </div>
+    </div><!-- END ROW FOR FORM -->
+    </div><!-- END CONTAINER FOR FORM -->
+<hr class="mt-5 mb-5 pt5 pb-5">
+  {{> footer }}
+
+<!-- MAIN CONTENT STARTS HERE -->
+
+          {{> home }}
+
+    
+
+<!-- MAIN CONTENT ENDS HERE -->
+
+{{>scripts}}
+
+</body>
+
+</html>

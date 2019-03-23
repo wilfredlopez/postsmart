@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head }}
+
+<body id="page-top">
+
+{{> nav }}
+
+{{> postContent }}
+
+
+<div class="container">
+  <div class="text-right mt-3">
+  <h1><a href="/newpost" class="btn btn-wilfred"> Create New Post </a></h1>
+</div>
+
+
+
+
+
+    <h1>POSTS</h1>
+    <!--Post loop-->
+    {{#each posts}}
+    <div class="jumbotron">
+        <h1 class="display-4">{{title}}</h1>
+        <p class="lead">
+            {{description}}
+        </p>
+        <hr class="my-4">
+        <div class="card" style="width: 18rem;">
+        <img src="{{image}}" alt="{{image}}" class="img-thumbnail img-fluid">
+        </div>
+        <p>
+            {{{content}}} <!-- The curly braces to import HTML code -->
+  
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/post/view/{{ _id }}" role="button">more...</a>
+        </p>
+      
+        <div class="alert alert-light" role="alert">
+            Created by  <a href="/users/{{user_id.username}}" class="alert-link">
+            {{user_id.username}}
+              </a>.  <!-- Utilizando ../ porque dentro del loop esa variable no va -->
+           
+          
+           {{ createdAt }}  . Give it a click if you like.
+          </div>
+
+      </div><!-- JUMBOTRON  end of loop-->
+    {{/each}}
+
+
+
+</div><!-- Container -->
+
+  {{> footer }}
+
+
+{{>scripts}}
+
+</body>
+
+</html>

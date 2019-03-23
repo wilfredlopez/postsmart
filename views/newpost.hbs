@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head }}
+
+<body id="page-top">
+
+{{> nav }}
+
+{{> postContent }}
+
+
+<div class="container">
+  <div class="text-center">
+  <h1>New Post</h1>
+</div>
+<form class="jumbotron" action="/post/new" method="POST" enctype="multipart/form-data">
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label>Title</label>
+        <input type="text" name="title" placeholder="title" class="form-control" required></input>
+      </div>
+  </div><!--control group title -->
+
+  <div class="control-group">
+      <div  class="form-group floating-label-form-group controls">
+        <label>Description</label>
+        <input type="text" name="description" placeholder="description" class="form-control"></input>
+      </div>
+  </div><!--control group description -->
+
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label>Content</label>
+        <textarea id="myEditor" name="content" placeholder="content" cols="30" rows="10" class="dddddform-control" required></textarea>
+        </div>
+  </div><!--control group content-->
+
+
+    <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label>Image</label>
+        <input type="file" name="image" class="form-control-file">
+        </div>
+  </div><!--control group content-->
+
+  <div class="control-group text-center">
+      <div class="form-group floating-label-form-group controls">
+        <button class="btn btn-primary">Create Post</button>
+      </div>
+  </div><!--control group Button -->
+</form>
+
+
+
+</div><!-- Container -->
+
+  {{> footer }}
+
+
+{{>scripts}}
+
+</body>
+
+</html>

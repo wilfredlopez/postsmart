@@ -1,0 +1,61 @@
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/">Post Smart</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+           
+          <li class="nav-item">
+            <a class="nav-link" href="/">Posts</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/newpost">New Post</a>
+          </li>
+{{!--           
+           <li class="nav-item">
+            <a id="link-top" class="nav-link" href="/moreabout#pagetop">New Here?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/moreabout#portfolio">Top 6</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/moreabout#about">About</a>
+          </li> --}}
+
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/moreabout#contact">Contact</a>
+          </li>
+
+          {{#if user.username}}
+
+          <li class="nav-item">
+            <a href="/users/{{user.username}}"><button class="nav-link badge badge-dark btn mr-2">{{user.username}}</button></a>
+          </li>
+          <li class="nav-item">
+            <a href="/auth/logout"><button class="nav-link badge badge-dark btn">Logout</button></a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a href="/auth/login"><button class="nav-link badge badge-dark btn mr-2">Login</button></a>
+          </li>
+          
+          <li class="nav-item">
+          <a href="/auth/register"><button class="nav-link badge badge-dark btn">Register</button></a>
+         </li> 
+      
+          {{/if}}
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+

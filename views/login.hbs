@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head }}
+
+<body id="page-top">
+
+{{> nav }}
+
+{{> postContent }}
+
+
+<div class="container">
+  <div class="text-center">
+  
+</div>
+<form class="jumbotron" action="/user/login" method="POST" enctype="multipart/form-data">
+  
+  <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email" class="form-control" required autocomplete="email"></input>
+      </div>
+  </div><!--control group Email -->
+
+  <div class="control-group">
+      <div  class="form-group floating-label-form-group controls">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="password" class="form-control" autocomplete="current-password"></input>
+      </div>
+  </div><!--control group Password -->
+
+
+  <div class="control-group text-center">
+      <div class="form-group floating-label-form-group controls">
+        <button class="btn btn-primary">Login</button>
+       
+      </div>
+        {{#if error}}
+      <div id="invalid" class="alert alert-danger" role="alert" tabindex="0">{{error}}</div>
+       {{/if}}
+       <p><a  href="/auth/register" tabindex="0" class="btn btn-light">Dont have an Account? Register Here</a></p>
+  </div><!--control group Button -->
+
+
+</form>
+
+
+
+</div><!-- Container -->
+
+  {{> footer }}
+
+
+{{>scripts}}
+
+</body>
+
+</html>
