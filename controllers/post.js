@@ -8,11 +8,11 @@ module.exports = async (req, res) => {
     
     posts.sort((a,b)=>{
         if(a.createdAt > b.createdAt){
-            return 1
-        }else if(b.createdAt > a.createdAt){
             return -1
+        }else if(b.createdAt > a.createdAt){
+            return 1
         }else{
-            return
+            return 0
         }
     })
     
