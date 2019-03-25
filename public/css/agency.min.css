@@ -46,8 +46,11 @@
             
             #mainNav .navbar-nav .nav-item .nav-link.active,#mainNav .navbar-nav .nav-item .nav-link:hover{
                 
-                color: rgba(220, 232, 186, 0.89);
+                /* color: rgba(220, 232, 186, 0.89); */
+                background-color: #cc2323;
             text-decoration: underline;
+            border-radius: 6px 6px;
+
 
             }@media (min-width:992px){#mainNav{padding-top:25px;padding-bottom:25px;-webkit-transition:padding-top .3s,padding-bottom .3s;transition:padding-top .3s,padding-bottom .3s;border:none;background-color:transparent}
             

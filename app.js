@@ -27,6 +27,7 @@ const logincontrol = require('./controllers/login')
 const loginusercontrol = require('./controllers/loginuser')
 const logoutcontrol = require('./controllers/logout')
 const useraccountcontrol = require('./controllers/useraccount')
+const aboutcontrol = require('./controllers/about')
 
 //database
 //mongoose.connect(process.env.DB_URI, {useNewUrlParser: true}) //URI IS ON THE .ENV FILE
@@ -88,11 +89,7 @@ app.post('/user/register',storeusercontrol)
 app.post('/post/new',formpostcontrol)
 app.post('/user/login',loginusercontrol)
 app.get('/users/:username',useraccountcontrol)
-app.get('/about',(req,res)=>{
-    res.render('about.hbs',{
-        pageTitle:'About'
-    })
-})
+app.get('/about',aboutcontrol)
 //404 PAGE
 app.use((req,res)=>{res.render('notfound.hbs')})
 

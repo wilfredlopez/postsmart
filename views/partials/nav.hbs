@@ -36,13 +36,16 @@
           </li>
 
           {{#if user.username}}
-
+          
           <li class="nav-item">
             <a href="/users/{{user.username}}"><button class="nav-link badge badge-dark btn mr-2">{{user.username}}</button></a>
           </li>
-          <li class="nav-item">
+          
+          
+           <li class="nav-item">
             <a href="/auth/logout"><button class="nav-link badge badge-dark btn">Logout</button></a>
           </li>
+          
           {{else}}
           <li class="nav-item">
             <a href="/auth/login"><button class="nav-link badge badge-dark btn mr-2">Login</button></a>

@@ -66,6 +66,21 @@ $(document).ready(function(){
         window.scrollTo(0, 0);
     })
 
+
+
+//menuScroll
+$(window).scroll(function(){
+    let position = $(this).scrollTop();
+
+    if(position => 200){
+        $('#mainNav').addClass('nav-scroll');
+    } 
+    
+    if(position < 200){
+        $('#mainNav').removeClass('nav-scroll');
+    }
+});
+
 });//document ready function end
 
 
