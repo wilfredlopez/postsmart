@@ -13,6 +13,7 @@ module.exports = async (req,res)=>{
     res.render('view.hbs',{
         pageTitle: post.title,
         post,
-        user
+        user,
+        deleteError: req.flash('deleteError')
     })
 }

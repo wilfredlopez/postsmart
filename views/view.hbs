@@ -37,7 +37,10 @@
         Share</a></div>
          
           </div>
-
+            <a href="/deletePost/{{post._id}}" class="btn btn-danger">Delete</a>
+        {{#if deleteError}}
+      <div id="invalid" class="alert alert-danger" role="alert" tabindex="0">{{deleteError}}</div>
+       {{/if}}
       </div><!-- JUMBOTRON  end of loop-->
 </div><!-- Container -->
 

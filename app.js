@@ -28,6 +28,7 @@ const loginusercontrol = require('./controllers/loginuser')
 const logoutcontrol = require('./controllers/logout')
 const useraccountcontrol = require('./controllers/useraccount')
 const aboutcontrol = require('./controllers/about')
+const userdeletecontrol = require('./controllers/userDelete')
 
 //database
 //mongoose.connect(process.env.DB_URI, {useNewUrlParser: true}) //URI IS ON THE .ENV FILE
@@ -62,16 +63,21 @@ app.use(expressSession({
     })
   }))
 
+  hbs.localsAsTemplateData(app);
+
   app.use('*',(req, res,next)=>{
     User.findById(req.session.userId,(err, user)=>{
         if(err || !user){
             hbs.registerHelper('user', undefined)
         }else{
             hbs.registerHelper('user', user)
+            app.locals.user_name = user.username
         }})
      //registrando una variable global para utilizar en todos los templates
      next()
   })
+
+ 
 
 
 
@@ -90,6 +96,8 @@ app.post('/post/new',formpostcontrol)
 app.post('/user/login',loginusercontrol)
 app.get('/users/:username',useraccountcontrol)
 app.get('/about',aboutcontrol)
+app.get('/deletePost/:post_id', userdeletecontrol)
+
 //404 PAGE
 app.use((req,res)=>{res.render('notfound.hbs')})
 

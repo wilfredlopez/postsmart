@@ -22,13 +22,14 @@ module.exports = async (req, res) => {
             res.render('post.hbs',{
                 pageTitle: "Post",
                 posts,
-                user: undefined
+                user: undefined,
             })
         }else{
             res.render('post.hbs',{
                 pageTitle: "Post",
                 posts,
-                user
+                user,
+                currentUserName: user.username,
             })
 
         }
