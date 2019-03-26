@@ -20,6 +20,10 @@
                 {{post.description}}
         </p>
         <hr class="my-4">
+        
+        <div class="card" style="width: 18rem;">
+        <img src="{{post.image}}" alt="{{post.image}}" class="img-thumbnail img-fluid">
+        </div>
         <p>
            {{{post.content}}}
   
@@ -31,6 +35,7 @@
         <div class="fb-share-button" data-href="https://postsmart.herokuapp.com/post/view/{{ _id }}" data-layout="button" data-size="small"><a target="_blank" 
         href="https://postsmart.herokuapp.com/post/view/{{ _id }}" class="fb-xfbml-parse-ignore">
         Share</a></div>
+            
           </div>
 
       </div><!-- JUMBOTRON  end of loop-->
