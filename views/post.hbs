@@ -4,6 +4,8 @@
 {{> head }}
 
 <body id="page-top">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2"></script>
 
 {{> nav }}
 
@@ -45,7 +47,10 @@
               </a>.  <!-- Utilizando ../ porque dentro del loop esa variable no va -->
            
           
-           {{ createdAt }}  . Give it a click if you like.
+           {{ createdAt }}  . Share it if you like.
+        <div class="fb-share-button" data-href="https://postsmart.herokuapp.com/post/view/{{ _id }}" data-layout="button" data-size="small"><a target="_blank" 
+        href="https://postsmart.herokuapp.com/post/view/{{ _id }}" class="fb-xfbml-parse-ignore">
+        Share</a></div>
           </div>
 
       </div><!-- JUMBOTRON  end of loop-->

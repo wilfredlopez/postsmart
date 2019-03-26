@@ -29,3 +29,15 @@
 </script> 
 
 <script src="/js/main.js"></script>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : 'postsmart',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
